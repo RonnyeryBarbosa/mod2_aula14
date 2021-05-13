@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mod2_aula14/four.dart';
+import 'package:mod2_aula14/third.dart';
 import 'package:mod2_aula14/home.dart';
+import 'package:mod2_aula14/second.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +18,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Home(),
+      routes: {
+        'second': (context) => SecondScreen(),
+        'third': (context) => ThirdScreen(),
+        'four': (context) => FourScreen()
+      },
     );
   }
 }

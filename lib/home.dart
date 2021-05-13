@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:mod2_aula14/fora.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
             child: Center(
-      child: Container(
-        child: ElevatedButton(
+                child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Fora()),
-            );
+            Navigator.pushNamed(context, 'second');
           },
-          child: Text("Olhar dentro"),
+          child: Text("Tela 2"),
         ),
-      ),
-    )));
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, 'third');
+          },
+          child: Text('Tela 3'),
+        ),
+      ],
+    ))));
   }
 }
