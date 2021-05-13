@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mod2_aula14/four.dart';
 
 class ThirdScreen extends StatelessWidget {
   @override
@@ -16,7 +17,8 @@ class ThirdScreen extends StatelessWidget {
           child: Center(
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.popAndPushNamed(context, 'four');
+                    Navigator.popAndPushNamed(context, 'four',
+                        arguments: User('JÕao', 10));
                   },
                   child: Text('Quarta Tela'))),
         ));
