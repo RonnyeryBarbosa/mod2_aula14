@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mod2_aula14/components/home_buttom.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -10,22 +11,16 @@ class _SecondScreenState extends State<SecondScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'third',
-                    arguments: Color(0xFF00FF55));
-              },
-              child: Text("Tela 3"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'four');
-              },
-              child: Text("Tela 4"),
-            ),
+            HomeButton('Tela 3', 0XFFFF00FF, () {
+              Navigator.pushNamed(context, 'third',
+                  arguments: Color(0xFF00FF55));
+            }, context),
+            HomeButton('Tela 4', 0XFF9900FF, () {
+              Navigator.pushNamed(context, 'four');
+            }, context),
           ],
         ),
       ),
